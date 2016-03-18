@@ -1,0 +1,29 @@
+<%= link_to "New Song", new_song_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Title</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+
+   <tbody>
+      <% @songs.each do |song| %>
+
+         <tr>
+            <td><%= song.title %></td>
+            <td><iframe src="<%= song.url_url %>" height="75"></iframe> </td>
+
+
+
+            <td><%= button_to "Delete",  song, method: :delete, class: "btn btn-danger" %></td>
+         </tr>
+
+      <% end %>
+   </tbody>
+
+</table>

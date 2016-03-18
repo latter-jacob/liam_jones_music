@@ -1,0 +1,9 @@
+<div class = "well">
+   <%= form_for @song, html: { multipart: true } do |f| %>
+      <%= f.label :Title %>
+      <%= f.text_field :title %>
+      <%= f.label :File %>
+      <%= f.file_field :url %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+</div>
