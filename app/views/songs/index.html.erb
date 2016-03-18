@@ -1,6 +1,7 @@
-<%= link_to "New Song", new_song_path, class: "btn btn-primary" %>
-<br />
-<br />
+<% if current_user.nil? %>
+<% elsif current_user.admin? %>
+  <%= link_to "New Song", new_song_path, class: "btn btn-primary" %>
+<% end %>
 
 <table class = "table table-bordered table-striped">
    <thead>
@@ -17,13 +18,12 @@
          <tr>
             <td><%= song.title %></td>
             <td><iframe src="<%= song.url_url %>" height="75"></iframe> </td>
-
-
-
-            <td><%= button_to "Delete",  song, method: :delete, class: "btn btn-danger" %></td>
+            <% if current_user.nil? %>
+            <% elsif current_user.admin? %>
+              <td><%= button_to "Delete",  song, method: :delete, class: "btn btn-danger" %></td>
+            <% end %>
          </tr>
 
       <% end %>
    </tbody>
-
 </table>

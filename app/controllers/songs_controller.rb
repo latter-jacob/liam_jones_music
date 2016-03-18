@@ -9,19 +9,29 @@ class SongsController < ApplicationController
 
    def create
       @song = Song.new(song_params)
-
-      if @song.save
-         redirect_to songs_path, notice: "The song #{@song.title} has been uploaded."
+      if current_user.nil?
+        redirect_to songs_path, notice: "You do not have the rights to add songs."
+      elsif current_user.admin?
+        if @song.save
+          redirect_to songs_path, notice: "The song #{@song.title} has been uploaded."
+        else
+          render "new"
+        end
       else
-         render "new"
+        redirect_to songs_path, notice: "You do not have the rights to add songs."
       end
-
    end
 
    def destroy
-      @song = Song.find(params[:id])
+    @song = Song.find(params[:id])
+    if current_user.nil?
+      redirect_to songs_path, notice:  "You do not have the rights to delete."
+    elsif current_user.admin?
       @song.destroy
       redirect_to songs_path, notice:  "The song #{@song.title} has been deleted."
+    else
+      redirect_to songs_path, notice:  "You do not have the rights to delete."
+    end
    end
 
    private
