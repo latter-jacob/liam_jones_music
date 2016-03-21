@@ -6,22 +6,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="wrapper">
-    <div id="header">
+
       <%- flash.each do |key, value| -%>
       <div class="flash flash-<%= key %>">
         <%= value %>
       </div>
       <%- end -%>
-    </div>
-    <div id="content">
-      <%= yield %>
-    </div>
 
-    <div id="footer-img">
-      <%= link_to(image_tag( "logo.jpg", id: "logo-footer"), root_path) %>
-    </div>
-  </div>
+
+      <%= yield %>
 </body>
 <%= javascript_include_tag 'application' %>
 </html>
