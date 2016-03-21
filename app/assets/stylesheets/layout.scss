@@ -1,0 +1,25 @@
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#content {
+	padding-bottom:100px; /* Height of the footer element */
+}
+#logo-footer{
+  width: 6rem;
+  background:#ffab62;
+  height:100px;
+  position:absolute;
+  bottom:0;
+}
+#footer-img{
+  text-align: center;
+}

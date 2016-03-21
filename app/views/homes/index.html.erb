@@ -6,3 +6,10 @@
     </ul>
 
 </div>
+<p id='secret'>
+  <%- if current_user -%>
+    <%= link_to '§', destroy_user_session_path, method: :delete %>
+  <%- else -%>
+     <%= link_to '§', new_user_session_path %>
+  <%- end -%>
+</p>

@@ -1,0 +1,40 @@
+// index ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.splash {
+  background: image-url("beach2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 99.96%;
+  overflow: hidden;
+}
+
+.center-nav {
+  list-style: none;
+  display: inline-flex;
+  vertical-align: middle;
+  padding-top: 18rem;
+  padding-left: 35rem;
+  a {
+    color: inherit;
+  }
+}
+
+#secret {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  a {
+    color: black;
+  }
+}
+// about ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#about-pic {
+  width: 15rem;
+}
+
+.about-group{
+  text-align: center;
+  padding-top: 10rem;
+}

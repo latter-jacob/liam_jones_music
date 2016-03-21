@@ -16,3 +16,9 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$( ".flash" ).click(function() {
+  $( "div.flash" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+});
+
+$('.flash').delay( 1500 ).fadeOut( 400 );
