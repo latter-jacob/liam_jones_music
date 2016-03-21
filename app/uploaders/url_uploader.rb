@@ -1,7 +1,4 @@
-# encoding: utf-8
-
 class UrlUploader < CarrierWave::Uploader::Base
-
 
   storage :file
 
