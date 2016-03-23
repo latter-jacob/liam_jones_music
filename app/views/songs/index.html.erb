@@ -9,6 +9,8 @@
       <tr>
         <th>Title</th>
         <th>Play Song</th>
+        <th>Download Song</th>
+
         <% if current_user.nil? %>
         <% elsif current_user.admin? %>
           <th> </th>
@@ -25,8 +27,11 @@
         <td>
           <audio controls>
             <source src="<%= song.url_url %>">
-            </audio>
-          </td>
+          </audio>
+        </td>
+        <td>
+          <%= link_to "Download", song_download_path(song), "data-toggle" => "firstModal" , "data-open" =>"exampleModal3" %>
+        </td>
 
           <% if current_user.nil? %>
           <% elsif current_user.admin? %>
