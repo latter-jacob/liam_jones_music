@@ -2,26 +2,31 @@
 <% elsif current_user.admin? %>
   <%= link_to "New Video", new_video_path, class: "btn btn-primary" %>
 <% end %>
-
-<table class = "table table-bordered table-striped">
-   <thead>
+<div class="media-div">
+<h1 class="media-title">Video List</h1>
+  <table class = "media-table table-striped">
+    <thead>
       <tr>
-         <th>Title</th>
-         <th> </th>
+        <th>Title</th>
+        <% if current_user.nil? %>
+        <% elsif current_user.admin? %>
+        <th> </th>
+        <% end %>
       </tr>
-   </thead>
+    </thead>
 
-   <tbody>
+    <tbody>
       <% @videos.each do |video| %>
 
-         <tr>
-            <td><%= link_to video.title, video_path(video) %></td>
-            <% if current_user.nil? %>
-            <% elsif current_user.admin? %>
-              <td><%= button_to "Delete",  video, method: :delete, class: "btn btn-danger" %></td>
-            <% end %>
-         </tr>
+      <tr>
+        <td><%= link_to video.title, video_path(video) %></td>
+        <% if current_user.nil? %>
+        <% elsif current_user.admin? %>
+        <td><%= button_to "Delete",  video, method: :delete, class: "btn btn-danger" %></td>
+        <% end %>
+      </tr>
 
       <% end %>
-   </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
