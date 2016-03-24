@@ -15,9 +15,21 @@
   vertical-align: middle;
   padding-top: 18rem;
   padding-left: 35rem;
+  line-height: 1rem;
+  font-size: 1.5rem;
   a {
     color: inherit;
   }
+}
+
+.center-nav-li:hover {
+  transition: .5s ;
+  font-size: 3rem;
+  line-height: 1rem;
+}
+
+#listen:hover{
+
 }
 
 #secret {
@@ -28,10 +40,27 @@
     color: black;
   }
 }
+
+.dropdown {
+  color: white;
+  list-style: none;
+  padding-left: 39.5rem;
+  padding-top: 1rem;
+}
+
+.dropdown-li {
+
+}
+
 // about ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #about-pic {
   width: 15rem;
+  transition: 1s;
+  -webkit-transition: width 1s;
+}
+#about-pic:hover {
+  width: 20rem;
 }
 
 .about-group{
