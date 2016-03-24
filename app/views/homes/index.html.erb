@@ -1,10 +1,21 @@
 <div class="splash">
+    <!-- <ul class="center-nav">
+      <li><%= link_to 'listen', songs_path %></li>|
+      <li><%= link_to 'me', about_path %></li>|
+      <li><%= link_to 'watch', videos_path %></li>
+    </ul> -->
     <ul class="center-nav">
-      <li class="center-nav-li" id="listen"><%= link_to 'listen', songs_path %></li>&nbsp;|&nbsp;
-      <li class="center-nav-li" id="me"><%= link_to 'me', about_path %></li>&nbsp;|&nbsp;
+      <li class="center-nav-li"><%= link_to 'listen', songs_path %></li>&nbsp;|&nbsp;
+      <li class="dropdown">
+        <div class="drop"><%= link_to 'me', about_path %>&nbsp;|&nbsp;</div> 
+        <div class="dropdown-content">
+          <a href="https://www.facebook.com/liam.jones.395669?fref=ts">Facebook</a>
+          <a href="https://soundcloud.com/liam-jones-24">Soundcloud</a>
+          <a href="#">Youtube</a>
+        </div>
+      </li>
       <li class="center-nav-li"><%= link_to 'watch', videos_path %></li>
     </ul>
-
 </div>
 <p id='secret'>
   <%- if current_user -%>

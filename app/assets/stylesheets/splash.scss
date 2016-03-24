@@ -12,24 +12,25 @@
 .center-nav {
   list-style: none;
   display: inline-flex;
-  vertical-align: middle;
-  padding-top: 18rem;
-  padding-left: 35rem;
+  padding-top: 18vw;
+  padding-left: 28vw;
   line-height: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   a {
     color: inherit;
   }
 }
 
-.center-nav-li:hover {
+.drop:hover {
   transition: .5s ;
-  font-size: 3rem;
+  font-size: 1.3rem;
   line-height: 1rem;
 }
 
-#listen:hover{
-
+.center-nav-li:hover {
+  transition: .5s ;
+  font-size: 1.3rem;
+  line-height: 1rem;
 }
 
 #secret {
@@ -41,16 +42,6 @@
   }
 }
 
-.dropdown {
-  color: white;
-  list-style: none;
-  padding-left: 39.5rem;
-  padding-top: 1rem;
-}
-
-.dropdown-li {
-
-}
 
 // about ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -66,4 +57,36 @@
 .about-group{
   text-align: center;
   padding-top: 10rem;
+}
+// ofeinpierunve
+
+.drop {
+    color: black;
+    font-size: 1rem;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 31.3vw;
+    min-width: 160px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+  font-weight: bold;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
