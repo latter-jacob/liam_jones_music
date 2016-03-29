@@ -1,0 +1,42 @@
+<div class="media-div">
+  <h1 class="media-title">Track List</h1>
+  <table class = "media-table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Play Song</th>
+        <th>Download Song</th>
+
+        <% if current_user.nil? %>
+        <% elsif current_user.admin? %>
+          <th> </th>
+        <% end %>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @songs.each do |song| %>
+
+      <tr>
+        <td><%= song.title %></td>
+        <td>
+          <audio controls>
+            <source src="<%= song.url_url %>">
+          </audio>
+        </td>
+        <td>
+          <%= link_to "Download", song_download_path(song), "data-toggle" => "firstModal" , "data-open" =>"exampleModal3" %>
+        </td>
+
+          <% if current_user.nil? %>
+          <% elsif current_user.admin? %>
+          <td><%= button_to "Delete",  song, method: :delete, class: "btn btn-danger" %></td>
+          <% end %>
+        </tr>
+
+        <% end %>
+      </tbody>
+    </table>
+
+</div>
