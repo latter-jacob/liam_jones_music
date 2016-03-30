@@ -7,9 +7,20 @@
 }
 .media-title {
   padding-left: 16rem;
-  padding-top: 4rem;
 }
-// search
+
+.sort-list {
+  list-style: none;
+  display: inline-flex;
+}
+.sort-list2 {
+  padding-top: 1.5rem;
+  padding-left: 2rem;
+  a {
+    color: inherit;
+  }
+}
+// search ///////////////////////////////////////
 .sorry_message {
   text-align: center;
   padding-top: 10%;
@@ -18,9 +29,6 @@
 .submit_search {
  margin-top: .5rem;
  margin-left: 2rem;
-}
-
-.text_field_search {
 }
 
 #search_list {

@@ -2,6 +2,10 @@ class SongsController < ApplicationController
   def index
     if params[:search]
       @songs = Song.search(params[:search]).sort_by {|song| song.created_at}.reverse
+    elsif params[:alpha].present?
+      @songs = Song.all.sort_by {|song| song.title}
+    elsif params[:date].present?
+      @songs = Song.all.sort_by {|song| song.created_at}.reverse
     else
       @songs = Song.all.sort_by {|song| song.created_at}.reverse
     end
